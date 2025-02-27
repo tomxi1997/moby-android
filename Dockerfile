@@ -289,7 +289,7 @@ ARG DEBIAN_FRONTEND
 ARG TARGETPLATFORM
 RUN --mount=type=cache,sharing=locked,id=moby-runc-aptlib,target=/var/lib/apt \
     --mount=type=cache,sharing=locked,id=moby-runc-aptcache,target=/var/cache/apt \
-        apt-get update && xx-apt-get install -y --no-install-recommends \
+        apt-get update && apt-get install -y --no-install-recommends \
             dpkg-dev gcc libc6-dev libseccomp-dev
 ARG DOCKER_STATIC
 RUN --mount=from=runc-src,src=/usr/src/runc,rw \
